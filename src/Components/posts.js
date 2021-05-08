@@ -2,8 +2,8 @@ import React from 'react';
 
 const Posts = () => {
     return (
-        <div>
-            <form>
+        <div className="form">
+            <form method="GET">
                 <input placeholder="Title"></input>
                 <br></br>
                 <input placeholder="Content"></input>

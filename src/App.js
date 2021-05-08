@@ -7,8 +7,11 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
-      <h1>I am the Blog Page</h1>
+      <h1>Welcome to the messageboard please feel free to leave a message...</h1>
       <Posts />
+      <Blogs />
+      <Blogs />
+      <Blogs />
       <Blogs />
     </div>
   );
