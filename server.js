@@ -3,7 +3,6 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-
 const apiRouter = require('./server/api');
 
 app.use((req, res, next) => {
@@ -13,7 +12,7 @@ app.use((req, res, next) => {
   
 app.use('/api', apiRouter);
 
-
+app.use(express.json({strict: true}));
 
 
 app.listen(PORT, () => {

@@ -15,15 +15,16 @@ class App extends React.Component {
   };
 
 
+  //On load of web page call all current messages from the database to set to state in order to post on the page
+
   componentDidMount(){
     BlogsApi.search().then((response) => {
       console.log(response.blogs);
       this.setState({
-        blog: response
+        blog: response.blogs
       })
     })
-  }
-  
+  } 
   
 
   render(){

@@ -15,4 +15,18 @@ postsRouter.get('/', (req, res, next) => {
     
 })
 
+postsRouter.post('/', (req, res, next) => {
+    
+    db.run('INSERT INTO Blogs (title, content) VALUES ($title, $content)', {
+        $title: req.title,
+        $content: req.content
+    }, function(err){
+    if(err){
+        next(err);
+    } 
+    db.get(`SELECT * FROM Blogs WHERE id=${this.lastId}`, (err, blog) => {
+        res.status(201).json({blogs: blog});
+    });
+})});
+
 module.exports = postsRouter;
