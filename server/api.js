@@ -5,6 +5,7 @@ const postsRouter = require('./postsRouter');
 apiRouter.use('/posts', postsRouter);
 
 apiRouter.get('/', (req, res) => {
+    console.log(req.body);
     res.send('Response within the api router');
 });
 

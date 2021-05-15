@@ -4,7 +4,6 @@ const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./blogposts.sqlite');
 
 
-
 postsRouter.get('/', (req, res, next) => {
     db.all('SELECT * FROM Blogs', (err, blogs) => {
         if(err){
@@ -15,18 +14,19 @@ postsRouter.get('/', (req, res, next) => {
     
 })
 
-postsRouter.post('/', (req, res, next) => {
-    
+postsRouter.post('/', (req, res, next) => {    
+    console.log(req.body);
     db.run('INSERT INTO Blogs (title, content) VALUES ($title, $content)', {
-        $title: req.title,
-        $content: req.content
-    }, function(err){
+        $title: req.body.title,
+        $content: req.body.content
+    }, function(err){        
     if(err){
         next(err);
     } 
-    db.get(`SELECT * FROM Blogs WHERE id=${this.lastId}`, (err, blog) => {
-        res.status(201).json({blogs: blog});
+    db.get(`SELECT * FROM Blogs WHERE id=${this.lastId}`, (err, blogs) => {
+        res.status(201).json({blogs: blogs});
     });
-})});
+})
+});
 
 module.exports = postsRouter;

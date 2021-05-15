@@ -12,22 +12,23 @@ class Posts extends React.Component{
     }
 
     handleSubmit = (event) => {
-        alert('A form was submitted: ' + this.state );
-        const bodyState = JSON.stringify(this.state) 
-        console.log(bodyState);
-        fetch ('http://localhost:4000/api/posts', {
+        
+        const bodyState = this.state 
+        const options = {
             method: 'POST',
-            body: bodyState           
-        }).then(function(response){
-            console.log(response);
-            return response.json();
-        })
-
-        event.preventDefault();
+            headers: {
+                'Content-Type': 'application/json'
+                
+            },
+            body: JSON.stringify(bodyState)          
+        }
+        fetch ('http://localhost:4000/api/posts', options);
+        console.log(options)
+        //event.preventDefault();
     }
 
     handleChangeContent = (event) => {
-        this.setState({content: event.target.value});
+        this.setState({content: event.target.value}); 
     }
 
     handleChangeTitle = (event) => {
@@ -39,7 +40,9 @@ class Posts extends React.Component{
     return (
         <div className="form">
             <form method="GET" onSubmit={this.handleSubmit}>
-                <input placeholder="Title" name="title" onChange={this.handleChangeTitle}></input>
+                <label>Your Name : </label>
+                <input placeholder="Name" name="title" onChange={this.handleChangeTitle}></input>
+                <label>Your Message : </label>
                 <input placeholder="Content"  name="content" onChange={this.handleChangeContent}></input>
                 <button type="submit">Submit</button>
             </form>
