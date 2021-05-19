@@ -4,6 +4,7 @@ const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./blogposts.sqlite');
 
 
+
 postsRouter.get('/', (req, res, next) => {
     db.all('SELECT * FROM Blogs', (err, blogs) => {
         if(err){
@@ -27,6 +28,23 @@ postsRouter.post('/', (req, res, next) => {
         res.status(201).json({blogs: blogs});
     });
 })
+});
+
+
+postsRouter.delete('/:id', (req, res, next) => {
+    db.run('DELETE FROM Blogs WHERE id=$id', {
+        $id: req.params.id
+    }, (err, blog)=> {
+        if(err){
+            console.log(err);
+            next(err);
+        } else {
+            db.get(`SELECT * FROM Blogs WHERE id=${this.lastId}`, (err, blog) => {
+                res.sendStatus(200).send()
+            })
+        }
+    }    
+    )
 });
 
 module.exports = postsRouter;
