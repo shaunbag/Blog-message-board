@@ -40,9 +40,9 @@ class Posts extends React.Component{
     return (
         <div className="form">
             <form method="GET" onSubmit={this.handleSubmit}>
-                <label>Your Name : </label>
-                <input placeholder="Name" name="title" onChange={this.handleChangeTitle}></input>
-                <label>Your Message : </label>
+                <label>Title : </label>
+                <input placeholder="Title" name="title" onChange={this.handleChangeTitle}></input>
+                <label>Message : </label>
                 <input placeholder="Content"  name="content" onChange={this.handleChangeContent}></input>
                 <button type="submit">Submit</button>
             </form>
