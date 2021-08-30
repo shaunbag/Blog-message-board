@@ -19,7 +19,7 @@ class App extends React.Component {
 
   componentDidMount(){
     BlogsApi.search().then((response) => {
-      console.log(response.blogs);
+
       this.setState({
         blog: response.blogs
       })
@@ -29,7 +29,7 @@ class App extends React.Component {
   // once state has updated ie. posts deleted, the page reloads new state from the blogs database
   componentDidUpdate(){
     BlogsApi.search().then((response) => {
-      console.log(response.blogs);
+     
       this.setState({
         blog: response.blogs
       })

@@ -34,12 +34,12 @@ postsRouter.post('/', (req, res, next) => {
 postsRouter.delete('/:id', (req, res, next) => {
     db.run('DELETE FROM Blogs WHERE id=$id', {
         $id: req.params.id
-    }, (err, blog)=> {
+    }, (err)=> {
         if(err){
             console.log(err);
             next(err);
         } else {
-            db.get(`SELECT * FROM Blogs WHERE id=${this.lastId}`, (err, blog) => {
+            db.get(`SELECT * FROM Blogs WHERE id=${this.lastId}`, (err) => {
                 res.sendStatus(200).send()
             })
         }
