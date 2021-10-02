@@ -39,7 +39,7 @@ class Posts extends React.Component{
     render(){
     return (
         <div className="form">
-            <form method="GET" onSubmit={this.handleSubmit}>
+            <form method="POST" onSubmit={this.handleSubmit}>
                 <label>Title : </label>
                 <input placeholder="Title" name="title" onChange={this.handleChangeTitle}></input>
                 <label>Message : </label>
