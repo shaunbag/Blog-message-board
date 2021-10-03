@@ -2,7 +2,7 @@
   "name": "blogger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.shaunmcelhinney.co.uk/messageboard",
+  "homepage": "https://shaunbagsmessages.herokuapp.com/messageboard",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
@@ -19,7 +19,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
