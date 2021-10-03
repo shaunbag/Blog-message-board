@@ -22,7 +22,7 @@ class Posts extends React.Component{
             },
             body: JSON.stringify(bodyState)          
         }
-        fetch ('http://localhost:4000/api/posts', options);
+        fetch ('ttps://shaunbagsmessages.herokuapp.com/messageboard/api/posts', options);
         console.log(options)
         //event.preventDefault();
     }
