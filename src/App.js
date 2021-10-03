@@ -49,7 +49,7 @@ class App extends React.Component {
       },
       body: id
     }
-      fetch ('http://localhost:4000/api/posts/'+id, options);
+      fetch ('https://shaunbagsmessages.herokuapp.com/messageboard/api/posts/'+id, options);
     
   };
   
