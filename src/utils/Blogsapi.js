@@ -1,7 +1,7 @@
 
 const BlogsApi = {
     async search() {   
-        const url = `https://shaunbagsmessages.herokuapp.com/messageboard/api/posts`
+        const url = `http://localhost:4000/api/posts`
         const response = await fetch(url);
             const jsonResponse = await response.json(); 
             if(jsonResponse){
