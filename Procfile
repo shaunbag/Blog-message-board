@@ -1,1 +1,1 @@
-web: node blogger/server.js
+web: node server.js

@@ -2,7 +2,7 @@
   "name": "blogger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.shaunmcelhinney.co.uk/messageboard",
+  "homepage": "https://shaunbagsmessages.herokuapp.com/",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
