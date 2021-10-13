@@ -49,7 +49,7 @@ class App extends React.Component {
       },
       body: id
     }
-      fetch ('http://localhost:5000/api/posts/'+id, options);
+      fetch ('http://localhost:3001/api/posts/'+id, options);
     
   };
   
