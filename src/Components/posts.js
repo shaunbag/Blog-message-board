@@ -12,7 +12,7 @@ class Posts extends React.Component{
     }
 
     handleSubmit = (event) => {
-        
+        event.preventDefault();
         const bodyState = this.state 
         const options = {
             method: 'POST',
@@ -22,7 +22,7 @@ class Posts extends React.Component{
             },
             body: JSON.stringify(bodyState)          
         }
-        fetch ('http://localhost:5000/api/posts', options);
+        fetch ('http://localhost:3001/api/posts', options);
         console.log(options)
         //event.preventDefault();
     }
