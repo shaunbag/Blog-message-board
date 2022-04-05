@@ -18,8 +18,6 @@ app.use((req, res, next) => {
 
 const apiRouter = require('./server/api');
 
-
 app.use('/api', apiRouter);
-
 
 module.exports = app;
