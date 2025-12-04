@@ -11,6 +11,8 @@ class App extends React.Component {
       this.state = {
       blog: []
     }
+    
+  this.handleDelete = this.handleDelete.bind(this);
 
   };
 
@@ -49,7 +51,14 @@ class App extends React.Component {
       },
       body: id
     }
-      fetch ('http://localhost:3001/api/posts/'+id, options);
+      fetch ('http://localhost:3001/api/posts/'+id, options).then(() => {
+        BlogsApi.search().then((response) => {
+     
+          this.setState({
+            blog: response.blogs
+          })
+        })
+      });
     
   };
   
