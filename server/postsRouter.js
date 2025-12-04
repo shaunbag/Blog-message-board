@@ -1,12 +1,11 @@
 const express = require('express');
 const postsRouter = express.Router();
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database('./blogposts.sqlite');
+const db = require('./db');
 
 
 
 postsRouter.get('/', (req, res, next) => {
-    db.all('SELECT * FROM Blogs', (err, blogs) => {
+    db.all('SELECT * FROM Blogs LIMIT 200', (err, blogs) => {
         if(err){
             next(err);
         }
